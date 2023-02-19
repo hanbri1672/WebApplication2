@@ -1,0 +1,37 @@
+﻿@page
+@model WebApplication2.Pages.IndexModel2
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<html>
+<head>
+    <title>Login Page</title>
+</head>
+<style>
+            /* center the form */
+            #signin1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+</style>
+<body>
+    <form id="signin1" runat="server">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" />
+
+            <br /><br />
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" />
+
+            <br /><br />
+
+            <button type="submit">Sign In</button>
+        </div>
+    </form>
+</body>
+</html>

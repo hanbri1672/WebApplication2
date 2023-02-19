@@ -1,0 +1,42 @@
+﻿@page
+@model Registration.Pages.RegisterModel
+@{
+    ViewData["Title"] = "Registration page";
+}
+
+<html>
+<head>
+    <title>Registration Form</title>
+</head>
+<style>
+            #registerForm {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -250%);
+        }
+</style>
+<body>
+    <form id="registerForm" method="post">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" />
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" />
+        </div>
+        <div>
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" />
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" />
+        </div>
+        <div>
+            <button id="btnSubmit" type="submit">Register</button>
+        </div>
+    </form>
+</body>
+</html>
