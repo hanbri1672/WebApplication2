@@ -1,20 +1,29 @@
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
-namespace WebApplication2.Pages
+public class SignInPageModel : Controller
 {
-    public class IndexModel2 : PageModel
+    private readonly DbContext _context;
+
+    public SignInPageModel(DbContext context)
     {
-        private readonly ILogger<IndexModel> _logger;
+        _context = context;
+    }
 
-        public IndexModel2(ILogger<IndexModel> logger)
+    [HttpPost]
+    public IActionResult OnPost(string email, string password)
+    {
+        var user = _context.Users.FirstOrDefault(u => u.Email == email && u.Password == password);
+
+        if (user != null)
         {
-            _logger = logger;
+            return RedirectToAction("WelcomePage");
         }
-
-        public void OnGet()
+        else
         {
-
+            ViewData["Error"] = "Invalid email or password";
+            return;
         }
     }
 }

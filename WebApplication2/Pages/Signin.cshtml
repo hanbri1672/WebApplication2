@@ -1,5 +1,5 @@
 ﻿@page
-@model WebApplication2.Pages.IndexModel2
+@model SignIn.Pages.IndexModel2
 @{
     ViewData["Title"] = "Home page";
 }
@@ -18,20 +18,14 @@
         }
 </style>
 <body>
-    <form id="signin1" runat="server">
-        <div>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" />
+    <form id="signin1" method="post">
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" required><br>
 
-            <br /><br />
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" />
-
-            <br /><br />
-
-            <button type="submit">Sign In</button>
-        </div>
-    </form>
+    <input type="submit" value="Sign In">
+</form>
 </body>
 </html>
