@@ -18,7 +18,7 @@ public class SignInPageModel : Controller
 
         if (user != null)
         {
-            return RedirectToAction("WelcomePage");
+            return RedirectToAction("Inventories");
         }
         else
         {
